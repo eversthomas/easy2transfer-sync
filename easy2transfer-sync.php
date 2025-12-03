@@ -2,12 +2,18 @@
 
 /**
  * Plugin Name: Easy2Transfer Sync
+ * Plugin URI:  https://github.com/eversthomas/easy2transfer-sync/
  * Description: Exportiert Mitglieder- und Kontaktdaten aus EasyVerein (API v2.0) und schreibt sie lokal in /.
- * Version: 2.9-stable
- * Author: Thomas Evers / ChatGPT Helper
- * 
+ * Version:     2.9-stable
+ * Author:      Thomas Evers
+ * Author URI:  https://bezugssysteme.de
+ * License:     GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/*
  * ⚠️ WICHTIG: Diese Version ist für Strato-Hosting optimiert und getestet.
- * Vor Refactoring: Vollständige Sicherung erstellen und Tests durchführen.
+ * Weitere erfolgreiche Tests bisher unter: lokale Mamp Umgebung, All-Inkl.com Webhosting
  */
 
 if (!defined('ABSPATH')) exit;
