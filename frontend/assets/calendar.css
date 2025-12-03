@@ -1,0 +1,230 @@
+/* ============================================
+   Easy2Transfer Calendar – sysTelios Transfer CI (mit JS-Readmore)
+   ============================================ */
+
+:root {
+  --e2t-yellow: #FFC600;
+  --e2t-yellow-light: #FFDA40;
+  --e2t-yellow-dark: #E6B400;
+  --e2t-text: #222;
+  --e2t-muted: #555;
+  --e2t-border: #eee;
+  --e2t-bg-light: #fffdf5;
+}
+
+/* --------------------------------------------
+   Grundlayout
+--------------------------------------------- */
+.e2t-calendar {
+  margin: 2rem auto;
+  max-width: 1100px;
+  font-family: system-ui, sans-serif;
+  padding: 0 1rem;
+}
+
+.e2t-calendar-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* --------------------------------------------
+   Event-Karten
+--------------------------------------------- */
+.e2t-event-card {
+  background: linear-gradient(180deg, var(--e2t-yellow) 0%, var(--e2t-yellow-light) 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  padding: 1.4rem 1.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--e2t-text);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.e2t-event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.16);
+  background: linear-gradient(180deg, var(--e2t-yellow-light) 0%, var(--e2t-yellow-dark) 100%);
+}
+
+/* --------------------------------------------
+   Kopf / Datum
+--------------------------------------------- */
+.e2t-event-date {
+  position: relative;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--e2t-text);
+  margin-bottom: 0.8rem;
+  background: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.e2t-event-date::before {
+  content: "📅";
+  margin-right: 0.4em;
+}
+
+/* --------------------------------------------
+   Inhalt
+--------------------------------------------- */
+.e2t-event-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--e2t-text);
+}
+
+.e2t-event-location {
+  font-size: 0.95rem;
+  color: var(--e2t-muted);
+  margin-bottom: 0.6rem;
+}
+
+/* Beschreibung */
+.e2t-event-desc {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--e2t-text);
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.e2t-event-desc.short {
+  max-height: 4.8em;
+  overflow: hidden;
+  position: relative;
+}
+
+/* dezenter Fade-Out Effekt bei gekürztem Text */
+.e2t-event-desc.short::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5em;
+}
+
+/* Volltext-Bereich */
+.e2t-event-full {
+  margin-top: 0.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Sanftes Einblenden */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------
+   Buttons & Interaktion
+--------------------------------------------- */
+.e2t-readmore {
+  margin-top: 0.8rem;
+  align-self: flex-start;
+  background: #fff;
+  color: var(--e2t-text);
+  margin-left: 0;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.e2t-readmore:hover {
+  background: var(--e2t-text);
+  color: #fff;
+}
+
+.e2t-load-more {
+  margin: 2em auto 0;
+  display: block;
+  background: #fff;
+  color: var(--e2t-text);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.4em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.e2t-load-more:hover {
+  background: var(--e2t-text);
+  color: #fff;
+}
+
+/* --------------------------------------------
+   Event-Link (externe Seite)
+--------------------------------------------- */
+.e2t-event-link {
+  margin-top: 0.8rem;
+  color: var(--e2t-text);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.e2t-event-link:hover {
+  color: var(--e2t-yellow-dark);
+}
+
+/* --------------------------------------------
+   Tag / Kategorie
+--------------------------------------------- */
+.e2t-event-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #fff;
+  color: var(--e2t-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* --------------------------------------------
+   Hidden state (JS)
+--------------------------------------------- */
+.hidden {
+  display: none !important;
+}
+
+/* --------------------------------------------
+   Dark Mode
+--------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  .e2t-event-card {
+    background: linear-gradient(180deg, #b89500 0%, #a58500 100%);
+    color: #f4f4f4;
+  }
+
+  .e2t-event-date {
+    background: #222;
+    color: #fff;
+  }
+
+  .e2t-readmore,
+  .e2t-load-more {
+    background: #222;
+    color: #fff;
+  }
+
+  .e2t-readmore:hover,
+  .e2t-load-more:hover {
+    background: #fff;
+    color: #111;
+  }
+}

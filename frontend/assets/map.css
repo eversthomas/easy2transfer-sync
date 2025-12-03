@@ -1,0 +1,345 @@
+/* ========================================
+   E2T Members Map Styling
+   ======================================== */
+
+/* Map Container */
+.e2t-map-container {
+  padding: 20px 0;
+}
+
+#e2t-members-map {
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  margin-top: 20px;
+}
+
+/* Map Filterbar */
+.e2t-map-filterbar {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.e2t-map-filterbar .e2t-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.e2t-map-filterbar label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.e2t-map-filterbar select.e2t-map-filter-select,
+.e2t-map-filterbar input.e2t-map-filter-text {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 13px;
+  min-width: 150px;
+  transition: border-color 0.2s;
+}
+
+.e2t-map-filterbar select.e2t-map-filter-select {
+  cursor: pointer;
+}
+
+.e2t-map-filterbar input.e2t-map-filter-text {
+  font-family: inherit;
+}
+
+.e2t-map-filterbar select.e2t-map-filter-select:hover,
+.e2t-map-filterbar input.e2t-map-filter-text:hover {
+  border-color: #999;
+}
+
+.e2t-map-filterbar select.e2t-map-filter-select:focus,
+.e2t-map-filterbar input.e2t-map-filter-text:focus {
+  outline: none;
+  border-color: #0073aa;
+  box-shadow: 0 0 0 3px rgba(0, 115, 170, 0.1);
+}
+
+.e2t-btn-reset {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-end;
+}
+
+.e2t-btn-reset:hover {
+  background: #5a6268;
+}
+
+/* Marker Icon */
+.e2t-marker-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.e2t-marker-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Leaflet Popup Styling */
+.e2t-leaflet-popup .leaflet-popup-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.e2t-leaflet-popup .leaflet-popup-content-wrapper {
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.e2t-leaflet-popup .leaflet-popup-tip {
+  background: white;
+}
+
+/* Marker Popup Content */
+.e2t-marker-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.e2t-popup-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.e2t-popup-content {
+  padding: 12px;
+}
+
+.e2t-popup-name {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+.e2t-popup-city {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.e2t-popup-details {
+  font-size: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.e2t-popup-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.e2t-popup-details strong {
+  color: #333;
+}
+
+/* Toggle View */
+.e2t-view-toggle {
+  width: 100%;
+}
+
+.e2t-toggle-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.e2t-toggle-btn {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.e2t-toggle-btn:hover {
+  border-color: #999;
+  background: #f9f9f9;
+}
+
+.e2t-toggle-btn.active {
+  background: #0073aa;
+  color: white;
+  border-color: #0073aa;
+}
+
+.e2t-view-content {
+  width: 100%;
+}
+
+.e2t-view {
+  display: none;
+}
+
+.e2t-view.active {
+  display: block;
+}
+
+/* Cluster Styling */
+.leaflet-cluster-anim .leaflet-marker-icon,
+.leaflet-cluster-anim .leaflet-marker-shadow {
+  transition: transform 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.leaflet-marker-cluster {
+  background-clip: padding-box;
+  border-radius: 40px;
+}
+
+.leaflet-marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: bold;
+  line-height: 30px;
+  font-size: 13px;
+  color: white;
+}
+
+.leaflet-marker-cluster .marker-cluster-small {
+  background-color: #b3d9ff;
+  color: #0066cc;
+}
+
+.leaflet-marker-cluster .marker-cluster-small div {
+  background-color: #0066cc;
+}
+
+.leaflet-marker-cluster .marker-cluster-medium {
+  background-color: #66b2ff;
+  color: #003366;
+}
+
+.leaflet-marker-cluster .marker-cluster-medium div {
+  background-color: #003366;
+}
+
+.leaflet-marker-cluster .marker-cluster-large {
+  background-color: #3366cc;
+  color: #ffffff;
+}
+
+.leaflet-marker-cluster .marker-cluster-large div {
+  background-color: #003d99;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #e2t-members-map {
+    height: 400px;
+  }
+
+  .e2t-map-filterbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .e2t-map-filterbar .e2t-filter {
+    width: 100%;
+  }
+
+  .e2t-map-filterbar select.e2t-map-filter {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .e2t-btn-reset {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .e2t-toggle-buttons {
+    width: 100%;
+  }
+
+  .e2t-toggle-btn {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .e2t-leaflet-popup .leaflet-popup-content-wrapper {
+    max-width: 280px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #e2t-members-map {
+    height: 300px;
+  }
+
+  .e2t-marker-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+
+  .e2t-popup-image {
+    height: 120px;
+  }
+
+  .e2t-leaflet-popup .leaflet-popup-content-wrapper {
+    max-width: 240px !important;
+  }
+}
+
+/* Scrollbar für Popup-Details */
+.e2t-popup-details::-webkit-scrollbar {
+  width: 6px;
+}
+
+.e2t-popup-details::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.e2t-popup-details::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.e2t-popup-details::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+

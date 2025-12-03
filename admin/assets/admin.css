@@ -1,0 +1,41 @@
+.e2t-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.e2t-tabs button {
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.e2t-tabs button.active {
+  background: #0073aa;
+  color: #fff;
+  border-color: #0073aa;
+}
+
+.e2t-admin .tab {
+  display: none;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.e2t-admin .tab.active {
+  display: block;
+}
+
+.e2t-showlabel {
+  margin-left: 1em;
+  font-size: 0.9em;
+  color: #444;
+}
+.e2t-showlabel input {
+  margin-right: 4px;
+}

@@ -1,0 +1,87 @@
+.e2t-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.e2t-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+.e2t-sortable {
+  border: 1px solid #ddd;
+  background: #fafafa;
+  padding: 0.5rem;
+  min-height: 60px;
+}
+
+.e2t-field-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 6px 8px;
+  border: 1px solid #eee;
+  background: #fff;
+  margin-bottom: 4px;
+  border-radius: 4px;
+}
+
+.drag-handle {
+  cursor: grab;
+  color: #888;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.e2t-id {
+  width: 90px;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.e2t-label {
+  flex: 1;
+  padding: 4px 6px;
+}
+
+.e2t-example {
+  flex: 2;
+  color: #999;
+  font-size: 0.85em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dragging {
+  background: #e0f7fa;
+  border-color: #26a69a;
+}
+
+.e2t-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.notice-inline {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+input {
+  max-width: 400px !important;
+}
+
+.e2t-field-options {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  margin-top: 0.3em;
+  font-size: 0.9em;
+}
+.e2t-field-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}

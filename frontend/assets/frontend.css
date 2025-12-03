@@ -1,0 +1,196 @@
+/* ============================================
+   Easy2Transfer Frontend Styles – sysTelios Transfer Highlight Cards
+   ============================================ */
+
+:root {
+  --e2t-yellow: #FFC600;
+  --e2t-yellow-light: #FFDA40;
+  --e2t-yellow-dark: #E6B400;
+  --e2t-text-dark: #1c1c1c;
+  --e2t-text-light: #222;
+  --e2t-border: #fff;
+}
+
+/* --------------------------------------------
+   Grundstruktur
+--------------------------------------------- */
+.entry-content {
+  margin: 1.5rem auto !important;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+/* Grid */
+.e2t-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0 3rem;
+}
+
+/* --------------------------------------------
+   Karten mit CI-Farbhintergrund
+--------------------------------------------- */
+.e2t-member-card {
+  border-radius: 18px;
+  overflow: hidden;
+  color: var(--e2t-text-dark);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Farbwechsel: leicht unterschiedliche Gelbtöne */
+.e2t-member-card:nth-child(odd) {
+  background: var(--e2t-yellow);
+}
+.e2t-member-card:nth-child(even) {
+  background: var(--e2t-yellow-light);
+}
+
+.e2t-member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* --------------------------------------------
+   Bildbereich
+--------------------------------------------- */
+.e2t-member-image {
+  background: #fff;
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.e2t-member-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  border: 5px solid #fff;
+}
+
+/* --------------------------------------------
+   Inhalt
+--------------------------------------------- */
+.e2t-member-content {
+  flex: 1;
+  padding: 0.5rem 0.3rem;
+}
+
+.e2t-heading {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--e2t-text-dark);
+  margin-bottom: 0.4em;
+}
+
+.e2t-field {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+  color: var(--e2t-text-light);
+}
+
+.e2t-inline-group {
+	display: flex;
+    gap: 0.5rem;
+}
+
+/* --------------------------------------------
+   Trennlinien & Sektionen
+--------------------------------------------- */
+.e2t-fields-middle {
+  margin-top: 0.8rem;
+  border-top: 2px solid rgba(255,255,255,0.6);
+  padding-top: 0.8rem;
+}
+
+/* --------------------------------------------
+   Buttons
+--------------------------------------------- */
+.e2t-toggle-btn,
+.e2t-load-more,
+.e2t-btn-reset {
+  background: #fff;
+  color: var(--e2t-text-dark);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.e2t-toggle-btn:hover,
+.e2t-load-more:hover,
+.e2t-btn-reset:hover {
+  background: var(--e2t-text-dark);
+  color: #fff;
+}
+
+/* --------------------------------------------
+   Filterbar (neutral gehalten)
+--------------------------------------------- */
+.e2t-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  background: #fff8d8;
+  border-radius: 12px;
+}
+
+.e2t-filter {
+	margin: 3px;
+    padding: 3px;
+}
+
+.e2t-filter label {
+  font-size: 0.85em;
+  color: #444;
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+.e2t-filter select,
+.e2t-filter input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.9em;
+  max-width: 150px;
+}
+
+/* --------------------------------------------
+   Dark Mode
+--------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  .e2t-member-card:nth-child(odd) {
+    background: #b89500;
+  }
+  .e2t-member-card:nth-child(even) {
+    background: #a58500;
+  }
+  .e2t-member-image {
+    background: #111;
+    border-color: #222;
+  }
+  .e2t-toggle-btn,
+  .e2t-load-more,
+  .e2t-btn-reset {
+    background: #222;
+    color: #fff;
+  }
+  .e2t-toggle-btn:hover,
+  .e2t-load-more:hover,
+  .e2t-btn-reset:hover {
+    background: #fff;
+    color: #111;
+  }
+}

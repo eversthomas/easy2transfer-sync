@@ -1,0 +1,375 @@
+/* Easy2Transfer – Neue Sidebar + Field UI Styles (2025)
+   Farbtheme: Grundfarbe #F8C346
+   Clean UX • Modern • Zugänglich • Kompatibel mit WP-Admin
+*/
+
+/* ----------------------------------------------
+   LAYOUT STRUKTUR
+---------------------------------------------- */
+.e2t-fields {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sidebar links */
+.e2t-sidebar {
+  width: 240px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 80px;
+  height: fit-content;
+}
+
+.e2t-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+#e2t-categories {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+#e2t-categories li {
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  color: #444;
+  transition: all 0.15s ease;
+}
+
+#e2t-categories li:hover {
+  background: #fde7b5;
+  color: #222;
+}
+
+#e2t-categories li.active {
+  background: #F8C346;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Hauptbereich rechts */
+.e2t-mainarea {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* ----------------------------------------------
+   QUICK-ACTIONS TOOLBAR
+---------------------------------------------- */
+.e2t-quick-actions {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.e2t-stats {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.e2t-stats span {
+  padding: 4px 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.e2t-action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.e2t-action-buttons .button-small {
+  padding: 4px 12px;
+  font-size: 12px;
+  height: auto;
+  line-height: 1.5;
+}
+
+
+/* ----------------------------------------------
+   FILTERBOX + SUCHFELD
+---------------------------------------------- */
+.e2t-filterbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#e2t-search {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.e2t-filterbox label {
+  font-size: 13px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+/* ----------------------------------------------
+   FELD-KARTEN / EINTRÄGE
+---------------------------------------------- */
+.e2t-field-row {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.e2t-field-row:hover {
+  background: #fff8e1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Kompaktere Ansicht für unkonfigurierte Felder */
+.e2t-field-row.e2t-unconfigured {
+  padding: 6px 8px;
+  opacity: 0.85;
+}
+
+.e2t-field-row.e2t-configured {
+  border-left: 3px solid #38a169;
+}
+
+.e2t-field-row.e2t-unconfigured {
+  border-left: 3px solid #cbd5e0;
+}
+
+.drag-handle {
+  cursor: grab;
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.e2t-id {
+  font-size: 12px;
+  color: #777;
+}
+
+.e2t-label {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.e2t-field-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.e2t-field-options label {
+  font-size: 13px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+/* Beispielwerte */
+.e2t-example {
+  font-size: 12px;
+  background: #fff3d1;
+  border-left: 3px solid #F8C346;
+  padding: 6px 8px;
+  border-radius: 4px;
+  color: #444;
+}
+
+
+/* ----------------------------------------------
+   SORTABLE AREAS (above / below / unused)
+---------------------------------------------- */
+.e2t-sortable {
+  min-height: 40px;
+  padding: 5px;
+}
+
+.e2t-section h3 {
+  font-size: 15px;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+/* Bereichsfarben */
+[data-area="above"] h3 { color: #2b6cb0; }
+[data-area="below"] h3 { color: #38a169; }
+[data-area="unused"] h3 { color: #888; }
+
+
+/* ----------------------------------------------
+   RESPONSIVE
+---------------------------------------------- */
+@media (max-width: 1100px) {
+  .e2t-fields {
+    flex-direction: column;
+  }
+  .e2t-sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.e2t-field-row {
+  border: 1px solid #e2e5ec;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  background: #fff;
+}
+
+.e2t-field-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.e2t-field-header .drag-handle {
+  cursor: grab;
+}
+
+.e2t-fav-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 2px;
+}
+
+.e2t-toggle-details {
+  margin-left: auto;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.e2t-field-body {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed #eee;
+  font-size: 0.9em;
+}
+
+.e2t-example {
+  margin-top: 4px;
+  color: #777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ----------------------------------------------
+   STATUS-BADGES
+---------------------------------------------- */
+.e2t-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.e2t-status-badge.e2t-status-in-use {
+  background: #38a169;
+  color: #fff;
+  border: 2px solid #2f855a;
+}
+
+.e2t-status-badge.e2t-status-configured {
+  background: #4299e1;
+  color: #fff;
+  border: 2px solid #2b6cb0;
+}
+
+.e2t-status-badge.e2t-status-unconfigured {
+  background: #cbd5e0;
+  color: #718096;
+  border: 2px solid #a0aec0;
+}
+
+/* Kompaktere Header */
+.e2t-field-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 13px;
+}
+
+.e2t-field-header .e2t-id {
+  font-size: 11px;
+  color: #999;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.e2t-field-header .e2t-label {
+  flex: 1;
+  min-width: 0;
+  padding: 4px 6px;
+  font-size: 13px;
+}
+
+/* Details standardmäßig ausgeblendet (kompakter) */
+.e2t-field-body {
+  display: none;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+  font-size: 12px;
+}
